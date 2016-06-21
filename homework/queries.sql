@@ -63,11 +63,24 @@ SELECT name from "users" WHERE name like '%er%' ORDER BY name;
 
 /** Section 3 **/
 
-/** Select the time for the Edinburgh Royal Tattoo.**/
+/** 1. Select the time for the Edinburgh Royal Tattoo.**/
 
-SELECT "times.time" FROM "times"
-INNER JOIN "shows" ON "times.show_id" = "show.id"
+SELECT "times".time FROM "times"
+INNER JOIN "shows" ON "times".show_id = "shows".id
 WHERE "shows".name = 'Edinburgh Royal Tattoo';
 
+/** 2.  19. Select the number of users who want to see "Shitfaced Shakespeare".**/
+
+SELECT COUNT(user_id) FROM "shows_users" 
+INNER JOIN "shows" ON "shows_users".show_id = "shows".id
+WHERE "shows".name = 'Shitfaced Shakespeare';
+
+/** 20. Select all of the user names and the count of shows they're going to see.**/
+
+.....
+
+/** 21. SELECT all users who are going to a show at 17:15.**/
+
+.....
 
 
